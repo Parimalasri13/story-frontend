@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import MemePage from './components/Memes/MemePage';
+import LifeStoriesPage from './components/LifeStories/LifeStoriesPage';
+import FictionalStoriesPage from './components/FrictionalStories/FictionalStoriesPage';
+import StoriesPage from './components/stories/StoriesPage';
+import  OtherOptionsPage from './components/OtherOptions/OtherOptionsPage';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/meme-page" element={<MemePage/>}/>
+            <Route path="/life-stories-page" element={<LifeStoriesPage/>}/>
+            <Route path="/fictional-stories-page" element={<FictionalStoriesPage/>}/>
+            <Route path="/stories-page" element={<StoriesPage/>}/>
+            <Route path="/otheroptions-page" element={<OtherOptionsPage/>}/>
+            
+            
+        </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
+
